@@ -15,12 +15,29 @@ const Hero = (): JSX.Element => (
     <section className="
       actions
     ">
-      <a
-        className="bg bg-pink-300 rounded-md hover:bg-pink-400 p-3 m-1"
-        href="#content"
-      >Get Started</a>
       <button
-        className="bg bg-pink-300 rounded-md hover:bg-pink-400 p-2 m-1"
+        className="
+          bg bg-pink-300 rounded-md hover:bg-pink-400
+          p-2 m-1
+          min-w-[150px]
+          my-2
+          sm:my-1
+          "
+        onClick={() => {
+          const content = document.getElementById('content')!;
+          const position = content?.getBoundingClientRect();
+          window.scrollTo({
+            behavior: 'smooth',
+            top: position?.height - 100
+          })
+        }}
+      >Get Started</button>
+      <button
+        className="
+          bg bg-pink-300 rounded-md hover:bg-pink-400 
+          p-2 m-1
+          min-w-[150px]
+          "
       >Learn More</button>
     </section>
   </section>
@@ -58,11 +75,24 @@ const Vault = ({ vault }: { vault: Vault }): JSX.Element => (
     </div>
     <section>
       <button
-        className="bg-blue-500 border-2 border-blue-500 hover:bg-transparent rounded-md px-2 py-1 mx-1"
+        className="
+          bg-blue-500 border-2 border-blue-500
+          hover:bg-transparent 
+          rounded-md
+          px-2 py-1 mx-1
+          my-1
+          min-w-[120px]
+          "
       >Deposit
       </button>
       <button
-        className="border-blue-500 border-2 hover:bg-blue-500 rounded-md py-1 px-2 mx-1"
+        className="
+          border-blue-500 border-2 hover:bg-blue-500
+          rounded-md 
+          py-1 px-2 mx-1
+          my-1
+          min-w-[120px]
+          "
       >Withdraw
       </button>
     </section>
